@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MAIRO框架提示</title>
+    </head>
+    <style type="text/css">
+		div.main{
+			font-family: "Mircosoft Yahei";
+			padding: 10px;
+			margin-left: 30px;
+		}
+
+		div.pic{
+			font-size: 105px;
+			padding-bottom:10px;
+			font-family: "Mircosoft Yahei";
+			font-size: 128px;
+		}
+		div.msg{
+			font-size: 28px;
+			margin-bottom: 30px;
+		}
+
+		div.info{
+			font-size:30px;
+			margin-bottom: 10px;
+		}
+		div.info div.title, div.trace div.title{
+			font-size: 180x;
+			font-weight: bold;
+		}
+		div.info div.path{
+			font-size: 16px;
+			line-height: 1.5em;
+		}
+		div.copyright{
+			font-family: "Mircosoft Yahei";
+			padding: 10px 45px;
+			color: #aaa;
+			text-align:left;
+		}
+		div.copyright a{
+			text-decoration: none;
+			color:#000;
+			font-size: 20px;
+		}
+		div.copyright a.mariophp{
+			font-size: 14px;
+			color:#aaa;
+		}
+    </style>
+    <body>
+    	<div class="main">
+    		<div class="pic">
+    			:( 
+    		</div>
+    		<div class="msg">
+    			<?php echo $e['message']; ?>:(
+    		</div>
+    		<?php if(DEBUG && isset($e['file'])): ?>
+    		<div class="info">
+    			<div class="title">
+    				错误位置:
+    			</div>
+    			<div class="path">
+    				FILE:<?php echo $e['file'];?>LINE:<?php echo $e['line']; ?>
+    			</div>
+    		</div>
+			<?php endif ?>
+			<?php if(isset($e['trace'])): ?>
+    		<div class="info">
+    			<div class="title">
+    				Trace
+    			</div>
+    			<div class="path">
+    				<?php echo nl2br($e['trace']); ?>
+    			</div>
+    		</div>
+    		<?php endif ?>
+    	</div>
+    	<div class="copyright">
+    		<a href="http://www.baidu.com" title="MARIO">
+    			<b>MARIO开源框架</b>
+    		</a>
+			(<?php echo MARIOPHP_VERSION ?>)
+    		[ <a href="" class="mariophp" title="mariophp" target="_black">MARiOPHP框架，就是那么牛。</a>]
+    	</div>
+    </body>
+</html>

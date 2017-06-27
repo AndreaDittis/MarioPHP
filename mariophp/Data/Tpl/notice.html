@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style type="text/css">
+    	div.mariophp_notice{
+			border: 1px solid #990000;
+			font-family: Microsoft Yahei;
+			padding-left:20px;
+			margin:10px;
+    	}
+    	div.mariophp_notice h3 {
+    		font-size:18px;
+    		margin:20px 0;
+    	}
+    	div.mariophp_notice p {
+    		font-size:14px;
+    		margin: 15px 0;
+    	}
+    </style>
+    <body>
+    	<div class="mariophp_notice">
+    		<h3><?php echo $error;?></h3>
+
+    		<p>
+    			Severity:<?php echo $errno; ?>
+    		</p>
+    		<p>
+    			File:<?php echo $file;?>
+    		</p>
+    		<p>
+    			Line:<?php echo $line;?>
+    		</p>
+    		<p style="color:#777456;font-size:10px;" >
+    			MARIOPHP开源框架 版本:<?php echo MARIOPHP_VERSION;?>
+    		</p>
+    	</div>
+    </body>
+</html>
